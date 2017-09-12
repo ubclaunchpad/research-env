@@ -5,8 +5,7 @@ MAINTAINER Chad <chad.d.lagore@gmail.com>
 RUN conda install -c anaconda nodejs
 
 # Set up jupyerlab.
-RUN conda install -c conda-forge jupyterlab && \
-    jupyter labextension disable @jupyterlab/terminal-extension
+RUN conda install -c conda-forge jupyterlab
 
 # Add additional deps.
 ADD requirements.txt /env/requirements.txt

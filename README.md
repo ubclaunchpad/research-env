@@ -3,9 +3,9 @@ research-env
 
 A training environment for machine learning.
 
-TODO: ascii art
-
 ## :running: Getting Started
+
+You will need [Docker](https://www.docker.com/docker-mac).
 
 ```
 make build-env
