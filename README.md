@@ -14,7 +14,7 @@ make run
 
 ## :package: Adding Dependencies
 
-Add `conda` packages to `environment.yml`, use `pip` command if required.
+Add packages to `requirements.txt`.
 
 ```
 make rebuild-env
