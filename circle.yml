@@ -1,0 +1,26 @@
+machine:
+    services:
+        - docker
+    python:
+        version: 3.6.1
+
+dependencies:
+    override:
+        - sudo apt-get install python-dev
+
+test:
+    override:
+        - echo "nothing to see here!"
+
+deployment:
+    pre:
+        - sudo apt-get install python-dev
+        - chmod +x ./bin/deploy-to-eb.sh
+    staging:
+        branch: dev
+        commands:
+            - ./bin/deploy-to-eb.sh researchstaging-env
+    production:
+        branch: master
+        commands:
+            - ./bin/deploy-to-eb.sh researchprod-env
