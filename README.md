@@ -20,6 +20,13 @@ Add packages to `requirements.txt`.
 make rebuild-env
 ```
 
+## :construction_worker: Development
+
+```
+make run   # Start the container.
+make dev   # Enter the container.
+```
+
 ## :shipit: Deployment
 
 ```
