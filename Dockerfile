@@ -11,13 +11,14 @@ RUN conda install -c conda-forge jupyterlab
 ADD requirements.txt /env/requirements.txt
 RUN conda install --file=/env/requirements.txt
 
-# Get our configs and profiles in
+# Get our configs, profiles and application files in
 ADD root/ /root/
+ADD app/ /app/
 
 # Clean up conda cache and tarballs
 RUN conda clean -ay
 
-WORKDIR /app
+WORKDIR /app/nb/
 
 EXPOSE 8080
 
