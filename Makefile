@@ -10,11 +10,10 @@ dev:
 	docker exec -it `docker ps -l -q` bash
 
 build-env:
-	docker rm -f $(IMAGE_NAME) || true
 	docker build -t $(IMAGE_NAME) .
 
 rebuild-env:
-	docker build -t $(IMAGE_NAME) .
+	docker build --no-cache=true -t $(IMAGE_NAME) .
 
 push-env:
 	./bin/push-docker.sh
