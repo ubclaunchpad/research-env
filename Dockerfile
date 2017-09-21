@@ -9,7 +9,7 @@ RUN conda install -c conda-forge jupyterlab
 
 # Add additional deps.
 ADD requirements.txt /env/requirements.txt
-RUN conda install --file=/env/requirements.txt
+RUN pip install -r /env/requirements.txt
 
 # Get our configs, profiles and application files in
 ADD root/ /root/
