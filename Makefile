@@ -2,12 +2,12 @@ IMAGE_NAME=research-env
 
 run:
 	docker run -it \
+		-v `pwd`/nb:/app/nb \
 		-e PASS_HASH=$(PASS_HASH) \
-		-p 8080:8080 $(IMAGE_NAME) \
-		-v nb:/app/nb/
+		-p 8080:8080 $(IMAGE_NAME)
 
 dev:
-	docker exec -it `docker ps -l -q` bash
+	docker exec -it `docker ps -q -l` bash
 
 build-env:
 	docker rm -f $(IMAGE_NAME) || true
